@@ -46,11 +46,7 @@ export default class App extends React.Component {
                 otherFirst: resp.data.otherFirst,
                 otherLast: resp.data.otherLast,
                 otherImageUrl: resp.data.otherImageUrl,
-            }),
-                console.log(
-                    "this.state in App after /usertwo axios done:",
-                    this.state
-                );
+            });
         });
     }
     showUploader(e) {
@@ -114,7 +110,11 @@ export default class App extends React.Component {
                         <div className="gallery-link">
                             <Link to="/gallery">List of Pending Items</Link>
                         </div>
-                        <Route exact path="/matches" component={Matches} />
+                        <Route
+                            exact
+                            path="/matches"
+                            render={() => <Matches cd={this.state.cd} />}
+                        />
                         <div className="matches-link">
                             <Link to="/matches">Matches</Link>
                         </div>

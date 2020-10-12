@@ -45,7 +45,10 @@ button {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    box-shadow: none;
+    overflow: hidden;
+}
+#comment-img {
+    border-radius: 50%;
     overflow: hidden;
 }
 #users-profile {

@@ -1,27 +1,28 @@
 import React, { useState, useEffect } from "react";
 import axios from "./axios";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-export default function Matches() {
+// import { Link } from "react-router-dom";
+// import { useSelector } from "react-redux";
+import CommentLog from "./CommentLog";
+export default function Matches({ cd }) {
+    //console.log("cd from Matches.js element", cd);
     // let finalPrice = useSelector((state) => state.finalPrice);
     const [items, setItems] = useState([]);
     let [final, setFinal] = useState(0);
-    const [comments, setComments] = useState([]);
+    // const [comments, setComments] = useState([]);
     useEffect(() => {
+        //console.log("cd from Matches.js element 2", cd);
         //console.log("useEffect is running!");//runs when the component mounts
         (async () => {
             try {
-                const resp = await axios.get("/api/matches", {
-                    params: { cd: "60784" }, //fix this here
-                });
-                console.log("resp.data :", resp.data.items);
+                const resp = await axios.get(`/api/matches/${cd}`);
+                //console.log("resp.data :", resp.data.items);
                 setItems(resp.data.items);
                 let final = 0;
                 for (var index = 0; index < resp.data.items.length; index++) {
                     final += resp.data.items[index].price;
                     setFinal(final);
                 }
-                console.log("final price  :", final);
+                // console.log("final price  :", final);
             } catch (err) {
                 console.log("err : ", err);
             }
@@ -44,6 +45,7 @@ export default function Matches() {
                     <p id="match-text">
                         {item.name}_{item.price} eur
                     </p>
+                    <CommentLog itemId={item.id} />
                 </div>
             ))}
         </div>

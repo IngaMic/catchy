@@ -121,3 +121,21 @@ module.exports.addReceiverReviewNo = (itemId) => {
         [itemId]
     );
 };
+module.exports.addComment = (userid, itemid, text) => {
+    return db.query(
+        `
+    INSERT INTO comments (userid, itemid, message )
+    VALUES ( $1, $2, $3) RETURNING * `,
+        [userid, itemid, text]
+    );
+};
+module.exports.getComments = (itemId) => {
+    return db.query(
+        `SELECT comments.id, first, last, imageurl, message FROM users
+    JOIN comments
+    ON users.id = comments.userid
+    WHERE itemid = $1 
+    ORDER BY comments.created_at DESC LIMIT 4`,
+        [itemId]
+    );
+};

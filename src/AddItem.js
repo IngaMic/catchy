@@ -29,13 +29,14 @@ export default class AddItem extends React.Component {
         axios
             .post("/uploaditem", formData)
             .then(function (resp) {
-                console.log("response from formData = I need it now :", resp);
+                console
+                    .log("response from formData = I need it now :", resp)
+                    .then(function () {
+                        that.clearInput();
+                    });
             })
             .catch(function (err) {
                 console.log("error in axios post", err);
-            })
-            .then(function () {
-                that.clearInput();
             });
     }
     handleChange(e) {

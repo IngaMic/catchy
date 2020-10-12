@@ -11,32 +11,43 @@ const Gallery = () => {
     // const cd = useSelector((state) => state && state.cd); // for now it's hardcoded
     // const items = useSelector((state) => state.items);
     const [items, setItems] = useState([]);
-    const [comments, setComments] = useState([]);
+    const [comment, setComment] = useState("");
     useEffect(() => {
-        //console.log("useEffect is running!");//runs when the component mounts
         (async () => {
             try {
                 const resp = await axios.get("/api/gallery", {
                     params: { cd: "60784" }, //fix this here
                 });
-                console.log("resp.data :", resp.data.items);
+                // console.log("resp.data :", resp.data.items);
                 setItems(resp.data.items);
             } catch (err) {
                 console.log("err : ", err);
             }
         })();
     }, []);
-    // const keyCheck = (e) => {
-    //     // console.log(" value : ", e.target.value);
-    //     // console.log("key pressed  :", e.key);
-    //     if (e.key === "Enter") {
-    //         e.preventDefault();
-    //         //console.log("our msg after key is pressed:", e.target.value);
-    //         socket.emit("message", e.target.value);
-    //         e.target.value = "";
-    //     }
-    // };
-    console.log("items : ", items);
+
+    const handleSubmit = (e, itemId) => {
+        e.preventDefault();
+        // console.log("comment : ", comment);
+        // console.log("itemId :   ", itemId);
+        axios
+            .post("/addcomment", {
+                text: comment,
+                itemId,
+            })
+            .then(function (resp) {
+                console.log("response from /addcomment in Gallery.js :", resp);
+            })
+            .catch(function (err) {
+                console.log("error in axios post", err);
+            });
+        e.target.value = "";
+    };
+    const handleChange = (e) => {
+        console.log("HandleChange is reacting, e.target.value", e.target.value);
+        setComment(e.target.value);
+    };
+    //console.log("items : ", items);
     if (items.length == 0) {
         return <h2>The review list is empty</h2>;
     } else {
@@ -64,6 +75,7 @@ const Gallery = () => {
                             >
                                 No!
                             </button>
+
                             <button
                                 id="yes"
                                 onClick={() => {
@@ -72,15 +84,27 @@ const Gallery = () => {
                             >
                                 Yes!
                             </button>
+                            <div className="add-comment">
+                                <form
+                                    onSubmit={(e) => handleSubmit(e, item.id)}
+                                >
+                                    <input
+                                        type="hidden"
+                                        value={item.id}
+                                        name="itemId"
+                                    />
+                                    <input
+                                        onChange={handleChange}
+                                        type="text"
+                                        name="text"
+                                        placeholder="Comment"
+                                    />
+                                    <button>Add</button>
+                                </form>
+                            </div>
                         </div>
                     );
                 })}
-                {/* <div className="add-comment">
-                    <textarea
-                        placeholder="Add Your Comment Here!"
-                        onKeyDown={keyCheck}
-                    ></textarea>
-                </div> */}
             </div>
         );
     }

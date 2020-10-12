@@ -54,7 +54,7 @@ io.use(function (socket, next) {
 app.use(csurf());
 
 app.use(function (req, res, next) {
-    console.log("token : ", req.csrfToken());
+    //console.log("token : ", req.csrfToken());
     res.cookie("mytoken", req.csrfToken());
     next();
 });
@@ -86,7 +86,7 @@ app.get("/welcome", (req, res) => {
     }
 });
 app.post("/welcome", (req, res) => {
-    console.log("req.body :", req.body);
+    //console.log("req.body :", req.body);
     let first = req.body.first;
     let last = req.body.last;
     let email = req.body.email;
@@ -176,7 +176,7 @@ app.post("/welcome", (req, res) => {
         });
 });
 app.post("/login", (req, res) => {
-    console.log("req.body :", req.body);
+    //  console.log("req.body :", req.body);
     var email = req.body.email;
     var password = req.body.password;
     //console.log("password", password);
@@ -186,8 +186,8 @@ app.post("/login", (req, res) => {
                 //console.log("result", result);
                 var userId = result.rows[0].id;
                 let pass = result.rows[0].password;
-                console.log("pass   ", pass);
-                console.log("password   ", password);
+                // console.log("pass   ", pass);
+                // console.log("password   ", password);
                 bc.compare(password, pass)
                     .then((info) => {
                         console.log("info from compare", info);
@@ -221,14 +221,14 @@ app.post("/login", (req, res) => {
         });
 });
 app.get("/user", (req, res) => {
-    console.log("req.session.userId", req.session.userId);
+    // console.log("req.session.userId", req.session.userId);
     if (req.session.userId) {
         let userId = req.session.userId;
-        console.log("userId from /user ", userId);
+        // console.log("userId from /user ", userId);
         db.getUser(userId)
             .then((info) => {
                 var list = info.rows;
-                console.log("my list here   :", list);
+                // console.log("my list here   :", list);
                 return res.json({
                     userId: list[0].id,
                     first: list[0].first,
@@ -247,14 +247,14 @@ app.get("/user", (req, res) => {
     }
 });
 app.get("/usertwo", (req, res) => {
-    console.log("req.session.userId", req.session.userId);
+    // console.log("req.session.userId", req.session.userId);
     if (req.session.userId) {
         let userId = req.session.userId;
-        console.log("userId from /user ", userId);
+        //console.log("userId from /user ", userId);
         db.getUser(userId)
             .then((info) => {
                 var list = info.rows;
-                console.log("my list here   :", list);
+                // console.log("my list here   :", list);
                 var groupCd = list[0].code;
                 db.getSecondUser(groupCd)
                     .then((data) => {
@@ -288,7 +288,7 @@ app.post("/uploadimg", uploader.single("file"), s3.upload, (req, res) => {
     const url = `${s3Url}${filename}`;
     db.updateImage(url, userId)
         .then((info) => {
-            console.log("info after updateImage : ", info.rows[0].imageurl);
+            // console.log("info after updateImage : ", info.rows[0].imageurl);
             return res.json({
                 imageUrl: info.rows[0].imageurl,
                 success: "success",
@@ -299,7 +299,7 @@ app.post("/uploadimg", uploader.single("file"), s3.upload, (req, res) => {
         });
 });
 app.post("/uploaditem", uploader.single("file"), s3.upload, (req, res) => {
-    console.log("I am getting an /uploaditem req");
+    //console.log("I am getting an /uploaditem req");
     //console.log("req.body :", req.body);
     const p = "pending";
     let filen = req.file.filename;
@@ -324,13 +324,13 @@ app.get("/api/gallery", async (req, res) => {
         const { rows } = await db.getUser(userId);
         if (rows[0].position == "sender") {
             const { rows } = await db.getSenderPendingItems(cd, p);
-            console.log("rows after getting pending items for sender", rows);
+            //console.log("rows after getting pending items for sender", rows);
             res.json({
                 items: rows,
             });
         } else {
             const { rows } = await db.getReceiverPendingItems(cd, p);
-            console.log("rows after getting pending items for receiver", rows);
+            //console.log("rows after getting pending items for receiver", rows);
             res.json({
                 items: rows,
             });
@@ -348,14 +348,14 @@ app.post("/api/accept/:id", async (req, res) => {
         var pos = rows[0].position;
         if (rows[0].position == "sender") {
             const { rows } = await db.addSenderReviewYes(itemId);
-            console.log("rows from accept/:id  :", rows);
+            //console.log("rows from accept/:id  :", rows);
             res.json({
                 item: rows[0],
                 pos,
             });
         } else {
             const { rows } = await db.addReceiverReviewYes(itemId);
-            console.log("rows from accept/:id  :", rows);
+            // console.log("rows from accept/:id  :", rows);
             res.json({
                 item: rows[0],
                 pos,
@@ -366,7 +366,7 @@ app.post("/api/accept/:id", async (req, res) => {
     }
 });
 app.post("/api/delete/:id", async (req, res) => {
-    console.log("I am getting a req delete");
+    // console.log("I am getting a req delete");
     try {
         var itemId = req.params.id;
         var logUserId = req.session.userId;
@@ -381,7 +381,7 @@ app.post("/api/delete/:id", async (req, res) => {
             });
         } else {
             const { rows } = await db.addReceiverReviewNo(itemId);
-            console.log("rows from delete/:id  :", rows);
+            //console.log("rows from delete/:id  :", rows);
             res.json({
                 item: rows[0],
                 pos,
@@ -392,13 +392,15 @@ app.post("/api/delete/:id", async (req, res) => {
     }
 });
 
-app.get("/api/matches", async (req, res) => {
+app.get("/api/matches/:cd", async (req, res) => {
     try {
-        const { cd } = req.query;
+        const { cd } = req.params;
+        // console.log("req.params", req.params);
+        // console.log("cd from the server", cd);
         // var userId = req.session.userId;
         var y = "yes";
         const { rows } = await db.getMatches(cd, y);
-        console.log("rows after getting matches", rows);
+        // console.log("rows after getting matches", rows);
         res.json({
             items: rows,
         });
@@ -406,6 +408,35 @@ app.get("/api/matches", async (req, res) => {
         console.log("err in getMatches get /matches", err);
     }
 });
+app.get("/api/comments/:itemId", async (req, res) => {
+    try {
+        const { itemId } = req.params;
+        // console.log("req.params", req.params);
+        // console.log("itemId from the server", itemId);
+        const { rows } = await db.getComments(itemId);
+        //console.log("rows after getting comments", rows);
+        res.json({
+            comments: rows,
+        });
+    } catch (err) {
+        console.log("err in getComments get /comments", err);
+    }
+});
+app.post("/addcomment", (req, res) => {
+    //console.log("I am getting a req to /addcomment");
+    var logUserId = req.session.userId;
+    db.addComment(logUserId, req.body.itemId, req.body.text)
+        .then(({ rows }) => {
+            console.log(" rows from addComment.then in index.js: ", rows);
+            res.json({
+                comment: rows[0],
+            });
+        })
+        .catch((err) => {
+            console.log("err n addComment index.js", err);
+        });
+});
+
 app.get("/logout", (req, res) => {
     req.session = null;
     res.redirect("/");
@@ -423,3 +454,4 @@ app.get("*", function (req, res) {
 app.listen(8080, function () {
     console.log("server is listening...");
 });
+//////////////////////////////////////////////////////////////////////
