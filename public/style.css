@@ -102,6 +102,11 @@ button {
     margin-left: 150px;
     padding: 5px 10px;
 }
+.final-price {
+    margin-top: 50px;
+    font-size: large;
+    font-weight: bold;
+}
 .profile-link {
     border: 1px solid purple;
     border-radius: 10px;

@@ -1,5 +1,5 @@
 //////////////////////Pattern Matching in psql = ILIKE for db.js
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "./axios";
 import { Link } from "react-router-dom";
 // import { socket } from "./socket";
@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { sayYes, sayNo } from "./actions";
 
 const Gallery = () => {
+    // const cInput = useRef();
     const dispatch = useDispatch();
     // const cd = useSelector((state) => state && state.cd); // for now it's hardcoded
     // const items = useSelector((state) => state.items);
@@ -24,7 +25,7 @@ const Gallery = () => {
                 console.log("err : ", err);
             }
         })();
-    }, []);
+    }, [items]);
 
     const handleSubmit = (e, itemId) => {
         e.preventDefault();
@@ -37,15 +38,22 @@ const Gallery = () => {
             })
             .then(function (resp) {
                 console.log("response from /addcomment in Gallery.js :", resp);
+
+                // cInput.current.value = "";
             })
             .catch(function (err) {
                 console.log("error in axios post", err);
+                // cInput.current.value = "";
             });
-        e.target.value = "";
+        clearInput(e);
     };
     const handleChange = (e) => {
         console.log("HandleChange is reacting, e.target.value", e.target.value);
         setComment(e.target.value);
+    };
+    const clearInput = (e) => {
+        console.log("e.target", e.target.children[1]);
+        e.target.children[1].value = "";
     };
     //console.log("items : ", items);
     if (items.length == 0) {
@@ -94,6 +102,7 @@ const Gallery = () => {
                                         name="itemId"
                                     />
                                     <input
+                                        // ref={cInput}
                                         onChange={handleChange}
                                         type="text"
                                         name="text"

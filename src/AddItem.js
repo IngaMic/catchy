@@ -23,21 +23,28 @@ export default class AddItem extends React.Component {
         console.log("this.file ", this.file);
         formData.append("name", this.state.name);
         formData.append("price", this.state.price);
-        formData.append("cd", this.state.cd);
-        console.log("formData before sending it", formData);
+        formData.append("cd", this.props.cd);
         var that = this;
+        console.log("formData before sending it", formData);
         axios
             .post("/uploaditem", formData)
             .then(function (resp) {
-                console
-                    .log("response from formData = I need it now :", resp)
-                    .then(function () {
-                        that.clearInput();
-                    });
+                console.log(resp);
+                that.clearInput();
+                // console.log("e.target", e.target);
+                // console.log("e.target.children", e.target.children);
+                // e.target.children.value = "";
             })
             .catch(function (err) {
                 console.log("error in axios post", err);
             });
+    }
+    clearInput() {
+        var inputs = document.querySelectorAll("input");
+        // console.log("inputs[0]  : ", inputs[0]);
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].value = "";
+        }
     }
     handleChange(e) {
         //console.log("HandleChange is reacting, e.target.value", e.target);
@@ -51,7 +58,7 @@ export default class AddItem extends React.Component {
                 () => {
                     console.log("this.state", this.state);
                 }
-            ); //console.log given as second arg
+            );
         } else {
             this.setState({ file: e.target.files[0] });
         }
@@ -77,12 +84,6 @@ export default class AddItem extends React.Component {
                         type="number"
                         name="price"
                         placeholder="price"
-                    />
-                    <input
-                        onChange={(e) => this.handleChange(e)}
-                        type="text"
-                        name="cd"
-                        placeholder="code"
                     />
                     <input
                         onChange={(e) => this.handleChange(e)}

@@ -55,7 +55,7 @@ export default function Matches({ cd }) {
             {!items.length && <div>No Matches Yet!</div>}
             {!!items.length && matches}
             {final > 0 && (
-                <div>
+                <div className="final-price">
                     <p>Price of all items together : {final} euro</p>
                 </div>
             )}

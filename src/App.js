@@ -118,7 +118,11 @@ export default class App extends React.Component {
                         <div className="matches-link">
                             <Link to="/matches">Matches</Link>
                         </div>
-                        <Route exact path="/uploaditem" component={AddItem} />
+                        <Route
+                            exact
+                            path="/uploaditem"
+                            render={() => <AddItem cd={this.state.cd} />}
+                        />
                         <div className="upload-item-link">
                             <Link to="/uploaditem">Upload Item</Link>
                         </div>

@@ -21,6 +21,8 @@ export default function (state = {}, action) {
         state = {
             ...state,
             items: state.items.map((item) => {
+                console.log("no action.id", action.id);
+                console.log("no item.id", item.id);
                 if (action.id == item.id) {
                     return {
                         ...item,
