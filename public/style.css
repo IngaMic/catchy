@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+img {
+    object-fit: cover;
+}
+
+.greet {
+    color: #d3ae43;
+    font-family: "Allura", cursive;
+}
+.greet1 {
+    font-family: "Playfair Display SC", serif;
+}
+.welcome {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #f9e2d3;
+}
+.registration,
+.login {
+    width: 380px;
+    height: 410px;
+    padding: 15px;
+    position: relative;
+    top: 200px;
+    margin: auto;
+    padding-left: 30px;
+    margin-top: -185px;
+    background: #f7f7f7f5;
+}
+
+button {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 19px;
+    padding-right: 19px;
+}
+#big-profile-img {
+    width: 100%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: none;
+    overflow: hidden;
+}
+#users-profile {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+#other-users-profile {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 55px;
+    float: right;
+    right: 300px;
+}
+.pending-items {
+    height: 800px;
+    /* overflow: hidden; */
+    position: relative;
+    /* display: flex; */
+    /* flex-direction: row; */
+}
+.pending-item {
+    width: 70%;
+    height: 700px;
+    right: 15%;
+    margin-top: 10px;
+    /* position: absolute; */
+    background-color: aliceblue;
+    object-fit: cover;
+    text-align: center;
+    /* transform: translateX(100%); */
+    padding-top: 30px;
+}
+#pending-img {
+    height: 400px;
+    width: auto;
+    max-width: 85%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#pending-text {
+    margin-left: auto;
+    margin-right: auto;
+}
+#no {
+    margin-right: 150px;
+    padding: 5px 10px;
+}
+#yes {
+    margin-left: 150px;
+    padding: 5px 10px;
+}
+.profile-link {
+    border: 1px solid purple;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 3px;
+    position: fixed;
+    float: right;
+    top: 70px;
+    right: 110px;
+    margin: 10px;
+}
+.gallery-link {
+    border: 1px solid purple;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 3px;
+    float: right;
+    position: fixed;
+    top: 100px;
+    right: 5px;
+    margin: 10px;
+}
+.matches-link {
+    border: 1px solid purple;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 3px;
+    position: fixed;
+    float: right;
+    top: 130px;
+    right: 95px;
+    margin: 10px;
+}
+.upload-item-link {
+    border: 1px solid purple;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 3px;
+    position: fixed;
+    float: right;
+    top: 160px;
+    right: 68px;
+    margin: 10px;
+}
+.logout-link {
+    border: 1px solid purple;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 3px;
+    position: fixed;
+    float: right;
+    top: 190px;
+    right: 102px;
+    margin: 10px;
+}
