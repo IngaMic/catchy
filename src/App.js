@@ -7,6 +7,7 @@ import Profile from "./Profile";
 import Matches from "./Matches";
 import Uploader from "./Uploader";
 import AddItem from "./AddItem";
+import Search from "./Search";
 /////////////////////////////////////////////////////////////
 
 export default class App extends React.Component {
@@ -105,6 +106,14 @@ export default class App extends React.Component {
                         />
                         <div className="profile-link">
                             <Link to="/">Profile</Link>
+                        </div>
+                        <Route
+                            exact
+                            path="/products"
+                            render={() => <Search cd={this.state.cd} />}
+                        />
+                        <div className="search-link">
+                            <Link to="/products">Search for New Items</Link>
                         </div>
                         <Route exact path="/gallery" component={Gallery} />
                         <div className="gallery-link">

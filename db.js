@@ -81,6 +81,14 @@ module.exports.getMatches = (cd, y) => {
         [cd, y]
     );
 };
+module.exports.getProducts = (val) => {
+    return db.query(
+        `SELECT id, name, price, imageurl FROM products
+         WHERE name ILIKE $1
+        LIMIT 6 `,
+        [val + "%"]
+    );
+};
 module.exports.addSenderReviewYes = (itemId) => {
     return db.query(
         `UPDATE items
@@ -137,5 +145,13 @@ module.exports.getComments = (itemId) => {
     WHERE itemid = $1 
     ORDER BY comments.created_at DESC LIMIT 4`,
         [itemId]
+    );
+};
+module.exports.removeProduct = (id) => {
+    return db.query(
+        `
+        DELETE FROM products
+        WHERE id = ($1)`,
+        [id]
     );
 };

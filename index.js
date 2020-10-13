@@ -339,7 +339,44 @@ app.get("/api/gallery", async (req, res) => {
         console.log("err in getPendingItems get /gallery", err);
     }
 });
-
+app.get("/api/products", async (req, res) => {
+    try {
+        const { userInput } = req.query;
+        var products = [];
+        // if (!userInput) {
+        //     const { rows } = await db.getSuggestedItems();
+        //     products = rows;
+        // }
+        const { rows } = await db.getProducts(userInput);
+        products = rows;
+        res.json({
+            products: products,
+        });
+    } catch (err) {
+        console.log("err in getProducts get /products"), err;
+    }
+});
+app.post("/addproduct", (req, res) => {
+    const p = "pending";
+    const { id, name, price, imageurl, cd } = req.body;
+    db.addItem(name, price, imageurl, cd, p)
+        .then(({ rows }) => {
+            // console.log(" rows from addItem /addproduct: ", rows);
+            res.json({
+                item: rows[0],
+            });
+            db.removeProduct(id)
+                .then((info) => {
+                    console.log("info", info);
+                })
+                .catch((err) => {
+                    console.log("err in db.removeProduct index.js", err);
+                });
+        })
+        .catch((err) => {
+            console.log("err n addItem /addproduct", err);
+        });
+});
 app.post("/api/accept/:id", async (req, res) => {
     try {
         var itemId = req.params.id;
@@ -348,7 +385,6 @@ app.post("/api/accept/:id", async (req, res) => {
         var pos = rows[0].position;
         if (rows[0].position == "sender") {
             const { rows } = await db.addSenderReviewYes(itemId);
-            //console.log("rows from accept/:id  :", rows);
             res.json({
                 item: rows[0],
                 pos,

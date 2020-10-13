@@ -38,12 +38,9 @@ const Gallery = () => {
             })
             .then(function (resp) {
                 console.log("response from /addcomment in Gallery.js :", resp);
-
-                // cInput.current.value = "";
             })
             .catch(function (err) {
                 console.log("error in axios post", err);
-                // cInput.current.value = "";
             });
         clearInput(e);
     };
@@ -72,7 +69,7 @@ const Gallery = () => {
                                 height="350"
                             ></img>
                             <p id="pending-text">
-                                {item.name}_{item.price}
+                                {item.name}_{item.price} euro
                             </p>
 
                             <button

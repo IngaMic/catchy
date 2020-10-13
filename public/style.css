@@ -114,8 +114,19 @@ button {
     padding: 3px;
     position: fixed;
     float: right;
-    top: 70px;
+    top: 40px;
     right: 110px;
+    margin: 10px;
+}
+.search-link {
+    border: 1px solid purple;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 3px;
+    position: fixed;
+    float: right;
+    top: 70px;
+    right: 4px;
     margin: 10px;
 }
 .gallery-link {
