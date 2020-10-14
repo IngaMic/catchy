@@ -35,6 +35,8 @@ export default function Matches({ cd }) {
         <div className="matches">
             {items.map((item) => (
                 <div className="match" key={item.id}>
+                    <p id="match-text">{item.name}</p>
+                    <p>{item.price} eur</p>
                     <img
                         id="match-img"
                         src={item.imageurl}
@@ -42,16 +44,14 @@ export default function Matches({ cd }) {
                         width="300"
                         height="350"
                     ></img>
-                    <p id="match-text">
-                        {item.name}_{item.price} eur
-                    </p>
+
                     <CommentLog itemId={item.id} />
                 </div>
             ))}
         </div>
     );
     return (
-        <div id="hot">
+        <div id="matches-container">
             {!items.length && <div>No Matches Yet!</div>}
             {!!items.length && matches}
             {final > 0 && (

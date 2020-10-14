@@ -82,10 +82,10 @@ const Search = ({ cd }) => {
                         placeholder="type here"
                     />
                 </div>
-                <div>
+                <div className="all-products">
                     {products.map((product, i) => {
                         return (
-                            <div className="find-products" key={i}>
+                            <div className="product" key={i}>
                                 <img
                                     id="product-img"
                                     src={product.imageurl}

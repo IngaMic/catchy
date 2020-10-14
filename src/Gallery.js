@@ -61,6 +61,8 @@ const Gallery = () => {
                 {items.map((item, i) => {
                     return (
                         <div className="pending-item" key={i}>
+                            <p id="pending-text">{item.name}</p>
+                            <p>{item.price} euro</p>
                             <img
                                 id="pending-img"
                                 src={item.imageurl}
@@ -68,9 +70,6 @@ const Gallery = () => {
                                 width="300"
                                 height="350"
                             ></img>
-                            <p id="pending-text">
-                                {item.name}_{item.price} euro
-                            </p>
 
                             <button
                                 id="no"

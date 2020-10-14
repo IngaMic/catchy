@@ -30,7 +30,8 @@ module.exports.getSecondUser = (cd) => {
 module.exports.getLogin = (email) => {
     return db.query(
         `
-        SELECT * FROM users WHERE email = ($1)`,
+        SELECT * FROM users 
+        WHERE email = ($1)`,
         [email]
     );
 };
@@ -85,7 +86,7 @@ module.exports.getProducts = (val) => {
     return db.query(
         `SELECT id, name, price, imageurl FROM products
          WHERE name ILIKE $1
-        LIMIT 6 `,
+        `,
         [val + "%"]
     );
 };
