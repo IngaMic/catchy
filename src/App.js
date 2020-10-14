@@ -64,15 +64,6 @@ export default class App extends React.Component {
         }
         return (
             <div>
-                <h3>Logo</h3>
-                {/* {this.state.userId && (
-                    <Profile
-                        userId={this.state.userId}
-                        first={this.state.first}
-                        last={this.state.last}
-                        imageUrl={this.state.imageUrl}
-                    />
-                )} */}
                 <div>
                     {this.state.error && (
                         <h4 className="err">Something Went Wrong!</h4>
@@ -80,6 +71,38 @@ export default class App extends React.Component {
                 </div>
 
                 <BrowserRouter>
+                    <div className="flex">
+                        <div className="logo">
+                            <h3>Logo</h3>
+                        </div>
+                        <div className="links">
+                            <div className="profile-link">
+                                <Link className="active" to="/">
+                                    Profile
+                                </Link>
+                            </div>
+                            <div className="search-link active">
+                                <Link className="active" to="/products">
+                                    Search
+                                </Link>
+                            </div>
+                            {/* <div className="upload-item-link">
+                                <Link className="active" to="/uploaditem">
+                                    Upload
+                                </Link>
+                            </div> */}
+                            <div className="gallery-link">
+                                <Link to="/gallery">Review</Link>
+                            </div>
+                            <div className="matches-link">
+                                <Link to="/matches">Matches</Link>
+                            </div>
+                            <div className="logout-link">
+                                <a href="/logout">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div>
                         <Route
                             exact
@@ -104,37 +127,26 @@ export default class App extends React.Component {
                                 />
                             )}
                         />
-                        <div className="profile-link">
-                            <Link to="/">Profile</Link>
-                        </div>
+
                         <Route
                             exact
                             path="/products"
                             render={() => <Search cd={this.state.cd} />}
                         />
-                        <div className="search-link">
-                            <Link to="/products">Search for New Items</Link>
-                        </div>
+
                         <Route exact path="/gallery" component={Gallery} />
-                        <div className="gallery-link">
-                            <Link to="/gallery">List of Pending Items</Link>
-                        </div>
+
                         <Route
                             exact
                             path="/matches"
                             render={() => <Matches cd={this.state.cd} />}
                         />
-                        <div className="matches-link">
-                            <Link to="/matches">Matches</Link>
-                        </div>
+
                         <Route
                             exact
                             path="/uploaditem"
                             render={() => <AddItem cd={this.state.cd} />}
                         />
-                        <div className="upload-item-link">
-                            <Link to="/uploaditem">Upload Item</Link>
-                        </div>
                     </div>
                 </BrowserRouter>
                 <div>
@@ -160,9 +172,6 @@ export default class App extends React.Component {
                             }}
                         />
                     )}
-                    <div className="logout-link">
-                        <a href="/logout">Logout</a>
-                    </div>
                 </div>
             </div>
         );

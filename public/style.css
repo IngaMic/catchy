@@ -107,7 +107,34 @@ button {
     font-size: large;
     font-weight: bold;
 }
-.profile-link {
+.flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 10px 20px;
+    border-bottom: 2px solid grey;
+}
+.links {
+    display: flex;
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.links a {
+    text-decoration: none;
+    margin-right: 15px;
+    color: rgb(82, 78, 78);
+}
+
+a:hover {
+    color: rgb(134, 122, 122);
+}
+
+/* a:active {
+    color: rgb(71, 157, 185);
+} */
+
+/* .profile-link {
     border: 1px solid purple;
     border-radius: 10px;
     text-decoration: none;
@@ -172,4 +199,4 @@ button {
     top: 190px;
     right: 102px;
     margin: 10px;
-}
+} */

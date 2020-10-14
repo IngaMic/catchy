@@ -176,14 +176,14 @@ app.post("/welcome", (req, res) => {
         });
 });
 app.post("/login", (req, res) => {
-    //  console.log("req.body :", req.body);
+    console.log("req.body :", req.body);
     var email = req.body.email;
     var password = req.body.password;
-    //console.log("password", password);
+    console.log(" email and password", email, password);
     db.getLogin(email)
         .then((result) => {
             if (result) {
-                //console.log("result", result);
+                console.log("result", result);
                 var userId = result.rows[0].id;
                 let pass = result.rows[0].password;
                 // console.log("pass   ", pass);
