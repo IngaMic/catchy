@@ -22,16 +22,19 @@ export default function CommentLog({ itemId }) {
         <div className="item-comments">
             {comments.map((comment) => (
                 <div className="comment" key={comment.id}>
-                    <img
-                        id="comment-img"
-                        src={comment.imageurl}
-                        alt="{comment.first}"
-                        width="60"
-                        height="60"
-                    ></img>
-                    <p id="commenter">
-                        {comment.first} _ {comment.message}
-                    </p>
+                    <div>
+                        <img
+                            id="comment-img"
+                            src={comment.imageurl}
+                            alt="{comment.first}"
+                            width="60"
+                            height="60"
+                        ></img>
+                        <p id="commenter">{comment.first}</p>
+                    </div>
+                    <div>
+                        <p>{comment.message}</p>
+                    </div>
                 </div>
             ))}
         </div>

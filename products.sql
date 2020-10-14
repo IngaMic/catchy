@@ -7,11 +7,25 @@ imageUrl TEXT,
 url TEXT
 );
 
-INSERT INTO products (name, price, imageUrl) VALUES (
-    'carpet Meran',
-  60,
-  'https://image.architonic.com/img_pro2-4/128/9254/carpet-basquette-30x60-b.jpg'
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'door mat SKIBET',
+  6,
+  'https://www.ikea.com/de/de/images/products/skibet-fussmatte-leopard-schwarz-orange__0767090_PE753955_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/skibet-fussmatte-leopard-schwarz-orange-00469441/'
 );
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'door mat VINSTRUP',
+  4,
+  'https://www.ikea.com/de/de/images/products/vinstrup-fussmatte-schwarz-grau__0721306_PE733155_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/vinstrup-fussmatte-schwarz-grau-30394232/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'door mat STAVREBY',
+  10,
+  'https://www.ikea.com/de/de/images/products/stavreby-fussmatte-innen-handarbeit-geflochten-naturfarben__0834501_PE778327_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/stavreby-fussmatte-innen-handarbeit-geflochten-naturfarben-10480358/'
+);
+
 INSERT INTO products (name, price, imageUrl) VALUES (
     'carpet Virgo',
   60,
@@ -111,6 +125,19 @@ INSERT INTO products  (name, price, imageUrl, url) VALUES (
   'https://www.ikea.com/de/de/images/products/fanbyn-stuhl-weiss__0587379_PE672586_S5.JPG?f=s',
   'https://www.ikea.com/de/de/p/fanbyn-stuhl-weiss-s49228474/'
 );
+
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'chair ALEFJÄLL',
+  262,
+  'https://www.ikea.com/de/de/images/products/alefjaell-drehstuhl-grann-goldbraun__0724709_PE734591_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/alefjaell-drehstuhl-grann-goldbraun-40419982/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'chair LÅNGFJÄLL',
+  156,
+  'https://www.ikea.com/de/de/images/products/langfjaell-drehstuhl-mit-armlehnen-gunnared-beige-weiss__0725409_PE734841_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/langfjaell-drehstuhl-mit-armlehnen-gunnared-beige-weiss-s09252791/'
+);
 INSERT INTO products  (name, price, imageUrl, url) VALUES (
     'chair SKRUVSTA',
   87,
@@ -154,6 +181,18 @@ INSERT INTO products  (name, price, imageUrl, url) VALUES (
   'https://www.ikea.com/de/de/p/bekvaem-trittleiter-3-tritte-schwarz-90219829/'
 );
 INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'chair LIDKULLEN',
+  88,
+  'https://www.ikea.com/de/de/images/products/lidkullen-sitz-stehstuetze-aktiv-gunnared-beige__0771305_PE755686_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/lidkullen-sitz-stehstuetze-aktiv-gunnared-beige-00418376/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'chair TOBIAS',
+  58,
+  'https://www.ikea.com/de/de/images/products/tobias-stuhl-transparent-verchromt__0727342_PE735614_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/tobias-stuhl-transparent-verchromt-80349671/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
     'chair UMI GAMING',
   119,
   'https://m.media-amazon.com/images/I/61meDRZr-JL._AC_UL480_FMwebp_QL65_.jpg',
@@ -172,10 +211,77 @@ INSERT INTO products  (name, price, imageUrl, url) VALUES (
   'https://www.ikea.com/de/de/p/askeby-2er-bettsofa-grau-30377317/'
 );
 INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa FLOTTEBO',
+  535,
+  'https://www.ikea.com/de/de/images/products/flottebo-bettsofa-gunnared-mittelgrau__0713783_PE729758_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/flottebo-bettsofa-gunnared-mittelgrau-s39297458/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa HAVSTEN',
+  389,
+  'https://www.ikea.com/de/de/images/products/havsten-2er-sofa-drinnen-draussen-beige__0729049_PE736632_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/havsten-2er-sofa-drinnen-draussen-beige-s09251956/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa SÖRVALLEN',
+  779,
+  'https://www.ikea.com/de/de/images/products/soervallen-3er-sofa-lejde-grau-schwarz__0795091_PE765867_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/soervallen-3er-sofa-lejde-grau-schwarz-s39314783/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa NYHAMN',
+  321,
+  'https://www.ikea.com/de/de/images/products/nyhamn-bettsofa-mit-dreierkissen-mit-federkernmatratze-skiftebo-gelb__0767331_PE754073_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/nyhamn-bettsofa-mit-dreierkissen-mit-federkernmatratze-skiftebo-gelb-s69306423/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa BONDHOLMEN',
+  321,
+  'https://www.ikea.com/de/de/images/products/bondholmen-2er-sofa-aussen-grau-las-jaerpoen-duvholmen-braunrot__0806166_PE769831_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/bondholmen-2er-sofa-aussen-grau-las-jaerpoen-duvholmen-braunrot-s29320789/'
+);
+
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
     'sofa ANGERSBY',
   145,
   'https://www.ikea.com/de/de/images/products/angersby-2er-sofa-knisa-hellgrau__0770896_PE755642_S5.JPG?f=s',
   'https://www.ikea.com/de/de/p/angersby-2er-sofa-knisa-hellgrau-10469186/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa KNOPPARP',
+  77,
+  'https://www.ikea.com/de/de/images/products/knopparp-2er-sofa-knisa-hellgrau__0713943_PE729858_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/knopparp-2er-sofa-knisa-hellgrau-10424621/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa SÖDERHAMN',
+  467,
+  'https://www.ikea.com/de/de/images/products/soederhamn-3er-sofa-gunnared-beige__0766704_PE753872_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/soederhamn-3er-sofa-gunnared-beige-s79305423/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa STOCKSUND',
+  565,
+  'https://www.ikea.com/de/de/images/products/stocksund-3er-sofa-nolhaga-graubeige-hellbraun-holz__0378892_PE556222_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/stocksund-3er-sofa-nolhaga-graubeige-hellbraun-holz-s89033813/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa GRÖNLID',
+  438,
+  'https://www.ikea.com/de/de/images/products/groenlid-3er-sofa-inseros-weiss__0577220_PE668688_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/groenlid-3er-sofa-inseros-weiss-s89254786/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa STOCKHOLM',
+  1656,
+  'https://www.ikea.com/de/de/images/products/stockholm-3er-sofa-seglora-naturfarben__0183763_PE334809_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/stockholm-3er-sofa-seglora-naturfarben-80245051/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa BRÅTHULT',
+  223,
+  'https://www.ikea.com/de/de/images/products/brathult-3er-sofa-borred-graugruen__0524913_PE644639_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/brathult-3er-sofa-borred-graugruen-s59217804/'
 );
 INSERT INTO products  (name, price, imageUrl, url) VALUES (
     'sofa LANDSKRONA',
@@ -208,10 +314,28 @@ INSERT INTO products  (name, price, imageUrl, url) VALUES (
   'hhttps://www.ikea.com/de/de/p/stockholm-2017-3er-sofa-sandbacka-dunkelblau-40344500/'
 );
 INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa HAVSTEN',
+  389,
+  'https://www.ikea.com/de/de/images/products/havsten-2er-sofa-drinnen-draussen-beige__0729049_PE736632_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/havsten-2er-sofa-drinnen-draussen-beige-s09251956/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
     'sofa BONDHOLMEN',
   320,
   'https://www.ikea.com/de/de/images/products/bondholmen-2er-sofa-aussen-grau-las-jaerpoen-duvholmen-braunrot__0806166_PE769831_S5.JPG?f=s',
   'https://www.ikea.com/de/de/p/bondholmen-2er-sofa-aussen-grau-las-jaerpoen-duvholmen-braunrot-s29320789/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa FLOTTEBO',
+  535,
+  'https://www.ikea.com/de/de/images/products/flottebo-bettsofa-gunnared-mittelgrau__0713783_PE729758_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/flottebo-bettsofa-gunnared-mittelgrau-s39297458/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'sofa ASKEBY',
+  145,
+  'https://www.ikea.com/de/de/images/products/askeby-2er-bettsofa-grau__0528799_PE645938_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/askeby-2er-bettsofa-grau-30377317/'
 );
 INSERT INTO products  (name, price, imageUrl, url) VALUES (
     'shelf MOLGER',
@@ -506,4 +630,64 @@ INSERT INTO products  (name, price, imageUrl, url) VALUES (
   8,
  'https://www.ikea.com/de/de/images/products/alocasia-amazonica-pflanze-elefantenohr__0653981_PE708210_S5.JPG?f=s',
   'https://www.ikea.com/de/de/p/alocasia-amazonica-pflanze-elefantenohr-90349487/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'plant ALOCASIA FEJKA',
+  5,
+ 'https://www.ikea.com/de/de/images/products/fejka-topfpflanze-kuenstlich-drinnen-draussen-haengend__0748917_PE745318_S5.JPG?f=g',
+  'https://www.ikea.com/de/de/p/fejka-topfpflanze-kuenstlich-drinnen-draussen-haengend-40349531/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'plant FICUS BENJAMINA',
+  5,
+ 'https://www.ikea.com/de/de/images/products/ficus-benjamina-natasja-pflanze-ficus-kleinblaettrig__0653996_PE708225_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/ficus-benjamina-natasja-pflanze-ficus-kleinblaettrig-56804613/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'plant POLYSCIAS FABIAN',
+  8,
+ 'https://www.ikea.com/de/de/images/products/polyscias-fabian-pflanze-fiederaralie__0548635_PE657314_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/polyscias-fabian-pflanze-fiederaralie-20387411/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'plant EUPHORBIA ACRURENSIS',
+  50,
+ 'https://www.ikea.com/de/de/images/products/euphorbia-acrurensis-pflanze__0654026_PE708251_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/euphorbia-acrurensis-pflanze-40144884/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'plant RADERMACHERA',
+  10,
+ 'https://www.ikea.com/de/de/images/products/radermachera-pflanze-zimmeresche__0828433_PE776593_S5.JPG?f=xxl',
+  'https://www.ikea.com/de/de/p/radermachera-pflanze-zimmeresche-40476755/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'plant PEPEROMIA POLYBOTRYA',
+  5,
+ 'https://www.ikea.com/de/de/images/products/peperomia-polybotrya-pflanze__0542743_PE654248_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/peperomia-polybotrya-pflanze-50408544/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'plant PEPEROMIA PICEA GLAUCA CONICA',
+  8,
+ 'https://www.ikea.com/de/de/images/products/picea-glauca-conica-pflanze-zuckerhutfichte__0548634_PE657313_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/picea-glauca-conica-pflanze-zuckerhutfichte-40478839/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'plant ZAMIOCULCAS',
+  15,
+ 'https://www.ikea.com/de/de/images/products/zamioculcas-pflanze-zamioculcas__0364400_PE547594_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/zamioculcas-pflanze-zamioculcas-60217011/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'plant SKIMMIA JAPONICA RUBELLA',
+  5,
+ 'https://www.ikea.com/de/de/images/products/skimmia-japonica-rubella-pflanze__0723235_PE733890_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/skimmia-japonica-rubella-pflanze-60477400/'
+);
+INSERT INTO products  (name, price, imageUrl, url) VALUES (
+    'plant SCHEFFLERA ARBORICOLA',
+  15,
+ 'https://www.ikea.com/de/de/images/products/schefflera-arboricola-pflanze-strahlenaralie-geflochtener-stamm__0573928_PE667973_S5.JPG?f=s',
+  'https://www.ikea.com/de/de/p/schefflera-arboricola-pflanze-strahlenaralie-geflochtener-stamm-90408542/'
 );

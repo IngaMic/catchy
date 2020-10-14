@@ -98,13 +98,17 @@ const Gallery = () => {
                                         name="itemId"
                                     />
                                     <input
+                                        className="comment-input"
                                         // ref={cInput}
                                         onChange={handleChange}
                                         type="text"
                                         name="text"
                                         placeholder="Comment"
                                     />
-                                    <button>Add</button>
+
+                                    <button className="comment-button">
+                                        Add Comment
+                                    </button>
                                 </form>
                             </div>
                         </div>
