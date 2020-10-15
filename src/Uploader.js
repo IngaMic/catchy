@@ -21,8 +21,9 @@ export default class Uploader extends React.Component {
             .then((resp) => {
                 console.log(
                     "response from formData after imageUrl uploaded",
-                    resp.data
+                    resp.data.imageUrl
                 );
+                console.log("props", this.props);
                 this.props.setImage(resp.data.imageUrl);
                 this.props.closeUploader(e);
             })
@@ -41,19 +42,6 @@ export default class Uploader extends React.Component {
     render() {
         return (
             <div id="uploader">
-                <h1 className="x" onClick={this.props.closeUploader}>
-                    x
-                </h1>
-                <img
-                    className="uploader-img"
-                    src={
-                        this.props.imageUrl ||
-                        "https://image.flaticon.com/icons/svg/1338/1338020.svg"
-                    }
-                    alt=""
-                    width="300"
-                    height="350"
-                ></img>
                 <form id="uploader-form" onSubmit={(e) => this.handleSubmit(e)}>
                     <input
                         onChange={(e) => this.handleChange(e)}
@@ -63,6 +51,9 @@ export default class Uploader extends React.Component {
                     />
                     <button>Submit</button>
                 </form>
+                <h4 className="x" onClick={this.props.closeUploader}>
+                    x
+                </h4>
             </div>
         );
     }

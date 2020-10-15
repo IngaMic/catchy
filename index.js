@@ -358,10 +358,12 @@ app.get("/api/products", async (req, res) => {
 });
 app.post("/addproduct", (req, res) => {
     const p = "pending";
+    console.log("req.body : ", req.body);
     const { id, name, price, imageurl, cd } = req.body;
+    console.log(" id name price imageurl cd", id, name, price, imageurl, cd);
     db.addItem(name, price, imageurl, cd, p)
         .then(({ rows }) => {
-            // console.log(" rows from addItem /addproduct: ", rows);
+            console.log(" rows from addItem /addproduct: ", rows);
             res.json({
                 item: rows[0],
             });

@@ -49,10 +49,11 @@ export default class Login extends React.Component {
                         <h4 className="err">Something Went Wrong!</h4>
                     )}
                     <div>
-                        <label>Email: </label>
+                        <label className="move4">Email: </label>
                         <input
                             onChange={(e) => this.handleChange(e)}
                             name="email"
+                            type="email"
                             value={this.state.email}
                             placeholder="Email"
                         />
@@ -62,6 +63,7 @@ export default class Login extends React.Component {
                         <input
                             onChange={(e) => this.handleChange(e)}
                             name="password"
+                            type="password"
                             value={this.state.password}
                             placeholder="Password"
                         />

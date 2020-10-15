@@ -31,8 +31,8 @@ const Search = ({ cd }) => {
         setUserInput(e.target.value);
     }
     function addToPending(e, id, name, price, imageurl) {
-        //console.log("e.target.value : ", e.target.value);
-        //console.log("name price and imageurl, cd", name, price, imageurl, cd);
+        console.log("e.target.value : ", e.target);
+        console.log("name price and imageurl, cd", name, price, imageurl, cd);
         e.preventDefault();
         axios
             .post("/addproduct", {
@@ -57,7 +57,7 @@ const Search = ({ cd }) => {
                     <AddItem cd={cd} />
                 </div>
                 <div className="search-div">
-                    <h3>Look for new items online:</h3>
+                    <h4>Look for new items online:</h4>
                     <input
                         onChange={handleChange}
                         type="text"
@@ -74,7 +74,7 @@ const Search = ({ cd }) => {
                     <AddItem />
                 </div>
                 <div className="search-div">
-                    <h3>Look for new items online:</h3>
+                    <h4>Look for new items online:</h4>
                     <input
                         onChange={handleChange}
                         type="text"

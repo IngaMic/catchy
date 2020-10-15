@@ -57,14 +57,14 @@ export default class Registration extends React.Component {
     render() {
         return (
             <div className="registration">
-                <h1 className="greet">Welcome to your planner!</h1>
+                {/* <h1 className="greet">Welcome to your planner!</h1> */}
                 <h2>Register here:</h2>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     {this.state.error && (
                         <h4 className="err">Something Went Wrong!</h4>
                     )}
                     <div>
-                        <label>Your First Name: </label>
+                        <label>First Name: </label>
                         <input
                             onChange={(e) => this.handleChange(e)}
                             name="first"
@@ -73,7 +73,7 @@ export default class Registration extends React.Component {
                         />
                     </div>
                     <div>
-                        <label>Your Last Name: </label>
+                        <label className="move1">Last Name: </label>
                         <input
                             onChange={(e) => this.handleChange(e)}
                             name="last"
@@ -82,7 +82,7 @@ export default class Registration extends React.Component {
                         />
                     </div>
                     <div>
-                        <label>Email: </label>
+                        <label className="move2">Email: </label>
                         <input
                             onChange={(e) => this.handleChange(e)}
                             name="email"
@@ -92,7 +92,7 @@ export default class Registration extends React.Component {
                         />
                     </div>
                     <div>
-                        <label>Password: </label>
+                        <label className="move3">Password: </label>
                         <input
                             onChange={(e) => this.handleChange(e)}
                             name="password"

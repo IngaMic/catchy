@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { sayYes, sayNo } from "./actions";
 
-const Gallery = () => {
+const Gallery = ({ cd }) => {
     // const cInput = useRef();
     const dispatch = useDispatch();
     // const cd = useSelector((state) => state && state.cd); // for now it's hardcoded
@@ -17,7 +17,7 @@ const Gallery = () => {
         (async () => {
             try {
                 const resp = await axios.get("/api/gallery", {
-                    params: { cd: "60784" }, //fix this here
+                    params: { cd: cd }, //fix this here
                 });
                 // console.log("resp.data :", resp.data.items);
                 setItems(resp.data.items);
@@ -54,7 +54,7 @@ const Gallery = () => {
     };
     //console.log("items : ", items);
     if (items.length == 0) {
-        return <h2>The review list is empty</h2>;
+        return <div className="pending-empty">Your review list is empty</div>;
     } else {
         return (
             <div className="pending-items">

@@ -52,7 +52,9 @@ export default function Matches({ cd }) {
     );
     return (
         <div id="matches-container">
-            {!items.length && <div>No Matches Yet!</div>}
+            {!items.length && (
+                <div className="matches-empty">Your Shopping list is empty</div>
+            )}
             {!!items.length && matches}
             {final > 0 && (
                 <div className="final-price">

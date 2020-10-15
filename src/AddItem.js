@@ -18,11 +18,12 @@ export default class AddItem extends React.Component {
     handleSbmt(e) {
         e.preventDefault();
         var formData = new FormData();
-        console.log("this.state before forming FormData :", this.state);
+        //console.log("this.state before forming FormData :", this.state);
         formData.append("file", this.state.file);
-        console.log("this.file ", this.file);
+        //console.log("this.file ", this.file);
         formData.append("name", this.state.name);
         formData.append("price", this.state.price);
+        formData.append("url", this.state.url);
         formData.append("cd", this.props.cd);
         var that = this;
         console.log("formData before sending it", formData);
@@ -66,9 +67,7 @@ export default class AddItem extends React.Component {
     render() {
         return (
             <div id="item-uploader">
-                {/* <h1 className="x" onClick={this.props.closeItemUploader}>
-                    x
-                </h1> */}
+                <h4>Add item to your review list:</h4>
                 <form
                     id="item-upload-form"
                     onSubmit={(e) => this.handleSbmt(e)}
@@ -84,6 +83,12 @@ export default class AddItem extends React.Component {
                         type="number"
                         name="price"
                         placeholder="price"
+                    />
+                    <input
+                        onChange={(e) => this.handleChange(e)}
+                        type="text"
+                        name="url"
+                        placeholder="url"
                     />
                     <input
                         onChange={(e) => this.handleChange(e)}
