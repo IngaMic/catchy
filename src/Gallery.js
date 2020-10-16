@@ -62,7 +62,7 @@ const Gallery = ({ cd }) => {
                     return (
                         <div className="pending-item" key={i}>
                             <p id="pending-text">{item.name}</p>
-                            <p>{item.price} euro</p>
+                            <p id="pending-price">{item.price} euro</p>
                             <img
                                 id="pending-img"
                                 src={item.imageurl}

@@ -35,8 +35,10 @@ export default function Matches({ cd }) {
         <div className="matches">
             {items.map((item) => (
                 <div className="match" key={item.id}>
-                    <p id="match-text">{item.name}</p>
-                    <p>{item.price} eur</p>
+                    <div id="match-text">
+                        <p>{item.name}</p>
+                        <p>{item.price} eur</p>
+                    </div>
                     <img
                         id="match-img"
                         src={item.imageurl}

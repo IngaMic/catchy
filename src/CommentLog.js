@@ -32,7 +32,7 @@ export default function CommentLog({ itemId }) {
                         ></img>
                         <p id="commenter">{comment.first}</p>
                     </div>
-                    <div>
+                    <div id="comment-final">
                         <p>{comment.message}</p>
                     </div>
                 </div>

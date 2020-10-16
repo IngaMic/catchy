@@ -108,7 +108,11 @@ button {
     padding-left: 40px;
     text-align: center;
     padding-right: 30px;
+}
+.profile-middle h4 {
     font-family: "Open Sans Condensed", sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
 }
 #no-other-users-profile {
     padding-top: 130px;
@@ -131,19 +135,26 @@ button {
 .comment {
     display: flex;
     justify-content: left;
+    margin-left: 15px;
 }
 .comment-input {
-    width: 25%;
+    width: 20%;
     position: absolute;
-    left: 398px;
-    top: 469px;
+    right: 160px;
+    top: 440px;
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
 }
 .comment-button {
-    margin-top: 20px;
+    position: absolute;
+    right: 180px;
+    top: 500px;
     padding: 2px 25px;
+}
+#comment-final {
+    padding-top: auto;
+    padding-bottom: auto;
 }
 .profiles {
     height: 100vw;
@@ -155,6 +166,9 @@ button {
     margin: 0 auto;
     grid-gap: 10px;
     padding: 0 20px 0 20px;
+}
+#users-profile h4 {
+    text-align: right;
 }
 #users-profile {
     /* position: absolute; */
@@ -192,36 +206,62 @@ button {
     width: auto;
     max-width: 85%;
     display: block;
-    margin-left: auto;
+    margin-left: 20%;
     margin-right: auto;
 }
 #pending-text {
+    position: absolute;
+    top: 120px;
     margin-left: auto;
-    margin-right: auto;
+    right: 200px;
+    font-size: 25px;
+}
+#pending-price {
+    position: absolute;
+    top: 160px;
+    margin-left: auto;
+    right: 200px;
 }
 #no {
     position: absolute;
-    margin-left: -350px;
+    top: 460px;
+    left: 325px;
     padding: 5px 10px;
-    top: 350px;
+    background-color: white;
+    border-color: rgba(128, 128, 128, 0.377);
 }
 #yes {
     position: absolute;
-    top: 350px;
-    margin-left: 300px;
+    top: 460px;
+    left: 440px;
     padding: 5px 10px;
+    background-color: rgba(39, 155, 39, 0.384);
+    text-shadow: 2px 0.5px 1px 2px rgba(0, 0, 0, 0.199);
+    border-color: #10301062;
+    color: rgb(24, 36, 27);
 }
 #yes,
 #no {
-    box-shadow: 2px 0.5px 1px 2px rgba(0, 0, 0, 0.199);
-    padding: 20px 40px;
+    margin-left: -60px;
+    /* box-shadow: 2px 0.5px 1px 2px rgba(0, 0, 0, 0.199); */
+    padding: 10px 40px;
     font-weight: bolder;
     border-radius: 5px;
+    font-size: 20px;
+}
+#yes:hover {
+    background-color: rgba(24, 185, 24, 0.425);
+    box-shadow: 3px 0.5px 1px 2px rgba(0, 0, 0, 0.199);
+}
+#no:hover {
+    background-color: rgb(241, 150, 150);
 }
 .final-price {
     margin-top: 50px;
-    font-size: large;
+    font-size: 35px;
     font-weight: bold;
+    margin-left: 35px;
+    margin-bottom: 50px;
 }
 .matches-empty,
 .pending-empty {
@@ -295,9 +335,9 @@ a:hover {
 }
 .matches {
     background-color: rgb(226, 220, 220);
-    width: 96%;
+    width: 98%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 10px auto;
     grid-gap: 5px;
 }
@@ -315,6 +355,9 @@ a:hover {
     max-height: 65%;
     margin-left: auto;
     margin-right: auto;
+}
+#match-text {
+    margin-top: 20px;
 }
 #uploader {
     margin-top: 20px;
