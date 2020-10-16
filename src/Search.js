@@ -16,7 +16,7 @@ const Search = ({ cd }) => {
                     const resp = await axios.get("/api/products", {
                         params: { userInput: userInput },
                     });
-                    // console.log("resp.data :", resp.data.products);
+                    console.log("resp.data :", resp.data.products);
                     setProducts(resp.data.products);
                 } catch (err) {
                     console.log("err : ", err);
@@ -30,9 +30,16 @@ const Search = ({ cd }) => {
         //console.log("e.target.value : ", e.target.value);
         setUserInput(e.target.value);
     }
-    function addToPending(e, id, name, price, imageurl) {
+    function addToPending(e, id, name, price, imageurl, url) {
         console.log("e.target.value : ", e.target);
-        console.log("name price and imageurl, cd", name, price, imageurl, cd);
+        console.log(
+            "name price and imageurl, cd, url",
+            name,
+            price,
+            imageurl,
+            cd,
+            url
+        );
         e.preventDefault();
         axios
             .post("/addproduct", {
@@ -41,6 +48,7 @@ const Search = ({ cd }) => {
                 price,
                 imageurl,
                 cd,
+                url,
             })
             .then(function (resp) {
                 console.log("resp.data.item.id", resp.data.item.id);
@@ -86,13 +94,19 @@ const Search = ({ cd }) => {
                     {products.map((product, i) => {
                         return (
                             <div className="product" key={i}>
-                                <img
-                                    id="product-img"
-                                    src={product.imageurl}
-                                    alt="{product.name}"
-                                    width="200"
-                                    height="250"
-                                ></img>
+                                <a
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href={product.url}
+                                >
+                                    <img
+                                        id="product-img"
+                                        src={product.imageurl}
+                                        alt="{product.name}"
+                                        width="200"
+                                        height="250"
+                                    ></img>
+                                </a>
                                 <p>{product.name}</p>
                                 <p>{product.price} euro</p>
                                 <button
@@ -103,7 +117,8 @@ const Search = ({ cd }) => {
                                             product.id,
                                             product.name,
                                             product.price,
-                                            product.imageurl
+                                            product.imageurl,
+                                            product.url
                                         )
                                     }
                                 >

@@ -360,8 +360,10 @@ a:hover {
     margin-top: 20px;
 }
 #uploader {
+    position: absolute;
     margin-top: 20px;
-    margin-left: 190px;
+    top: 520px;
+    margin-left: 230px;
     display: flex;
 }
 #uploader button {

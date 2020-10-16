@@ -15,7 +15,7 @@ export default function Matches({ cd }) {
         (async () => {
             try {
                 const resp = await axios.get(`/api/matches/${cd}`);
-                //console.log("resp.data :", resp.data.items);
+                console.log("resp.data :", resp.data.items);
                 setItems(resp.data.items);
                 let final = 0;
                 for (var index = 0; index < resp.data.items.length; index++) {
@@ -39,14 +39,19 @@ export default function Matches({ cd }) {
                         <p>{item.name}</p>
                         <p>{item.price} eur</p>
                     </div>
-                    <img
-                        id="match-img"
-                        src={item.imageurl}
-                        alt="{item.name}"
-                        width="300"
-                        height="350"
-                    ></img>
-
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={item.url}
+                    >
+                        <img
+                            id="match-img"
+                            src={item.imageurl}
+                            alt="{item.name}"
+                            width="300"
+                            height="350"
+                        ></img>
+                    </a>
                     <CommentLog itemId={item.id} />
                 </div>
             ))}

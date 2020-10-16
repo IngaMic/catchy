@@ -304,7 +304,14 @@ app.post("/uploaditem", uploader.single("file"), s3.upload, (req, res) => {
     const p = "pending";
     let filen = req.file.filename;
     const imageurl = `${s3Url}${filen}`;
-    db.addItem(req.body.name, req.body.price, imageurl, req.body.cd, p)
+    db.addItem(
+        req.body.name,
+        req.body.price,
+        imageurl,
+        req.body.cd,
+        p,
+        req.body.url
+    )
         .then(({ rows }) => {
             console.log(" rows from addItem.then in index.js: ", rows);
             res.json({
@@ -359,9 +366,9 @@ app.get("/api/products", async (req, res) => {
 app.post("/addproduct", (req, res) => {
     const p = "pending";
     console.log("req.body : ", req.body);
-    const { id, name, price, imageurl, cd } = req.body;
+    const { id, name, price, imageurl, cd, url } = req.body;
     console.log(" id name price imageurl cd", id, name, price, imageurl, cd);
-    db.addItem(name, price, imageurl, cd, p)
+    db.addItem(name, price, imageurl, cd, p, url)
         .then(({ rows }) => {
             console.log(" rows from addItem /addproduct: ", rows);
             res.json({

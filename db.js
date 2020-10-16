@@ -45,12 +45,12 @@ module.exports.updateImage = (imageUrl, userId) => {
     );
 };
 
-module.exports.addItem = (name, price, imageurl, code, p) => {
+module.exports.addItem = (name, price, imageurl, code, p, url) => {
     return db.query(
         `
-    INSERT INTO items (name, price, imageUrl, code, reviewone, reviewtwo)
-    VALUES ($1, $2, $3, $4, $5, $5) RETURNING id `,
-        [name, price, imageurl, code, p]
+    INSERT INTO items (name, price, imageUrl, code, reviewone, reviewtwo, url)
+    VALUES ($1, $2, $3, $4, $5, $5, $6) RETURNING id `,
+        [name, price, imageurl, code, p, url]
     );
 };
 
@@ -84,7 +84,7 @@ module.exports.getMatches = (cd, y) => {
 };
 module.exports.getProducts = (val) => {
     return db.query(
-        `SELECT id, name, price, imageurl FROM products
+        `SELECT id, name, price, imageurl, url FROM products
          WHERE name ILIKE $1
         `,
         [val + "%"]

@@ -9,18 +9,18 @@ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- 3 test notes
-INSERT INTO comments (userid, itemid, message) VALUES (
-    1,
-    2,
-  'looks like we could use it next to the pantry :)'
-);
-INSERT INTO comments (userid, itemid, message) VALUES (
-    2,
-    3,
-    'brings back so many great memories.'
-);
-INSERT INTO comments (userid, itemid, message) VALUES (
-    2,
-    2,
-    '....I hope this is the right size. Fingers crossed!'
-);
+-- INSERT INTO comments (userid, itemid, message) VALUES (
+--     1,
+--     2,
+--   'looks like we could use it next to the pantry :)'
+-- );
+-- INSERT INTO comments (userid, itemid, message) VALUES (
+--     2,
+--     3,
+--     'brings back so many great memories.'
+-- );
+-- INSERT INTO comments (userid, itemid, message) VALUES (
+--     2,
+--     2,
+--     '....I hope this is the right size. Fingers crossed!'
+-- );
