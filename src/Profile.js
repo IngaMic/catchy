@@ -46,12 +46,12 @@ export default class Profile extends React.Component {
                 <div className="profile-middle">
                     {this.props.otherId && (
                         <h4>
-                            Great! Looks like you’re all set.
+                            Are you ready for some action?
                             <br />
                             <br />
                             You can upload items for your partner to view or
-                            search for items online using the search function at
-                            the top right of the page.
+                            search for items online using the Add link at the
+                            top right of the page.
                         </h4>
                     )}
                     {!this.props.otherId && (

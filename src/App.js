@@ -102,7 +102,7 @@ export default class App extends React.Component {
                             </div>
                             <div className="search-link active">
                                 <Link className="active" to="/products">
-                                    Search
+                                    Add
                                 </Link>
                             </div>
                             {/* <div className="upload-item-link">
