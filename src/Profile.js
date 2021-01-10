@@ -78,6 +78,7 @@ export default class Profile extends React.Component {
                             width="200"
                             height="250"
                         ></img>
+
                         <h4 id="name-surname">{this.props.otherFirst}</h4>
                     </div>
                 )}

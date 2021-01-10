@@ -70,6 +70,7 @@ const Search = ({ cd }) => {
                         onChange={handleChange}
                         type="text"
                         name="userInput"
+                        autoComplete="off"
                         placeholder="type here"
                     />
                 </div>

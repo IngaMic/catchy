@@ -3,8 +3,27 @@
     box-sizing: border-box;
     font-family: "Nunito Sans", sans-serif;
 }
+
 img {
     object-fit: cover;
+}
+.logo {
+    margin-left: 20px;
+}
+button {
+    border: solid 2px #d1c8c8;
+    background: transparent;
+    color: #6e6e6e;
+}
+button:hover {
+    border: solid 2px #1f1f1f;
+    background: #7e7e7e;
+    color: #fff;
+}
+button:active {
+    border: solid 2px #1f1f1f;
+    background: #20a50e;
+    color: #fff;
 }
 .bi-bookmark-heart {
     width: 35px;
@@ -12,10 +31,7 @@ img {
     margin-left: -10px;
     margin-top: -5px;
 }
-/* .greet {
-    color: #d3ae43;
-    font-family: "Allura", cursive;
-} */
+
 .welcome-logo {
     margin-top: 4px;
     margin-left: 10px;
@@ -100,11 +116,19 @@ button {
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 2px 1px 3px 4px rgba(0, 0, 0, 0.199);
+    /* overflow: hidden; */
+    box-shadow: 2px 1px 40px 6px rgba(0, 0, 0, 0.151);
+    transition: 2s;
+    cursor: pointer;
 }
+#big-profile-img:hover {
+    box-shadow: 2px 45px 40px 6px rgba(0, 0, 0, 0.151);
+    transform: scale(1.2);
+    transition: 2s;
+}
+
 .profile-middle {
-    padding-top: 100px;
+    padding-top: 105px;
     padding-left: 40px;
     text-align: center;
     padding-right: 30px;
@@ -113,6 +137,7 @@ button {
     font-family: "Open Sans Condensed", sans-serif;
     font-size: 30px;
     font-weight: bolder;
+    opacity: 100%;
 }
 #no-other-users-profile {
     padding-top: 130px;
@@ -281,10 +306,11 @@ button {
 .flex {
     display: flex;
     justify-content: space-between;
-    padding: 20px 20px 10px 20px;
-    border-bottom: 2px solid rgba(128, 128, 128, 0.596);
-    width: 98%;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 0.7px solid rgba(31, 31, 31, 0.596);
+    width: 100%;
     margin-left: auto;
+    background: rgb(245, 245, 245);
     margin-right: auto;
 }
 .links {
@@ -295,7 +321,7 @@ button {
 
 .links a {
     text-decoration: none;
-    margin-right: 15px;
+    margin-right: 105px;
     color: rgb(82, 78, 78);
 }
 
@@ -366,6 +392,72 @@ a:hover {
     margin-left: 230px;
     display: flex;
 }
+uploader .inputfile {
+    left: 58%;
+    width: 90px;
+    height: 40px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+span {
+    padding-left: 10px;
+}
+.inputfile + label {
+    border: none;
+    color: #4fadb1;
+    background: white;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #19f8c8;
+    outline: none;
+    opacity: 0%;
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+
+.inputfile:focus + label {
+    outline: none;
+}
+.inputfile {
+    position: relative;
+    right: 140px;
+    cursor: pointer;
+    opacity: 0%;
+}
+svg,
+span {
+    pointer-events: none;
+}
+.submit {
+    position: relative;
+    right: 210px;
+    border: 1px solid grey;
+}
+/* uploader */
+#name-surname {
+    position: relative;
+    font-size: 50px;
+    font-weight: 800;
+    color: grey;
+}
+
 #uploader button {
     height: 30px;
     padding: 0 10px;
@@ -382,6 +474,14 @@ a:hover {
 }
 #uploader .x:hover {
     background-color: rgb(154, 154, 211);
+}
+.upX {
+    background: none;
+    position: relative;
+    right: 200px;
+    border: none;
+    color: rgb(136, 136, 136);
+    font-weight: 900;
 }
 #item-uploader {
     margin-left: 30px;
@@ -400,70 +500,18 @@ a:hover {
     margin-left: 30px;
     margin-top: 10px;
 }
+.photoUploader,
+.uploadText {
+    position: relative;
+    /* bottom: 20px; */
+    z-index: 0;
+}
 
-/* .profile-link {
-    border: 1px solid purple;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 3px;
-    position: fixed;
-    float: right;
-    top: 40px;
-    right: 110px;
-    margin: 10px;
-}
-.search-link {
-    border: 1px solid purple;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 3px;
-    position: fixed;
-    float: right;
-    top: 70px;
-    right: 4px;
-    margin: 10px;
-}
-.gallery-link {
-    border: 1px solid purple;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 3px;
-    float: right;
-    position: fixed;
-    top: 100px;
-    right: 5px;
-    margin: 10px;
-}
-.matches-link {
-    border: 1px solid purple;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 3px;
-    position: fixed;
-    float: right;
-    top: 130px;
-    right: 95px;
-    margin: 10px;
-}
-.upload-item-link {
-    border: 1px solid purple;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 3px;
-    position: fixed;
-    float: right;
-    top: 160px;
-    right: 68px;
-    margin: 10px;
-}
+.profile-link,
+.search-link,
+.gallery-link,
+.matches-link,
+.upload-item-link,
 .logout-link {
-    border: 1px solid purple;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 3px;
-    position: fixed;
-    float: right;
-    top: 190px;
-    right: 102px;
-    margin: 10px;
-} */
+    margin-right: -40px;
+}

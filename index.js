@@ -374,13 +374,13 @@ app.post("/addproduct", (req, res) => {
             res.json({
                 item: rows[0],
             });
-            db.removeProduct(id)
-                .then((info) => {
-                    console.log("info", info);
-                })
-                .catch((err) => {
-                    console.log("err in db.removeProduct index.js", err);
-                });
+            // db.removeProduct(id)
+            //     .then((info) => {
+            //         console.log("info", info);
+            //     })
+            //     .catch((err) => {
+            //         console.log("err in db.removeProduct index.js", err);
+            //     });
         })
         .catch((err) => {
             console.log("err n addItem /addproduct", err);
